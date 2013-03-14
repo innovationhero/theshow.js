@@ -1,4 +1,4 @@
-    $.ui.add("resizable", "alsoResizeReverse", {
+    $.ui.plugin.add("resizable", "alsoResizeReverse", {
 
         start: function(event, ui) {
 
@@ -68,6 +68,10 @@
             $(this).removeData("resizable-alsoresize-reverse");
         }
     });
+
+
+
+
 
 $(function() {
 
