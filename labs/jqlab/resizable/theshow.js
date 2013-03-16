@@ -1,3 +1,14 @@
+/* 
+                  _____   _                              __   _              __                
+                 / ___ \ (_)___   ___  ___  _  __ ___ _ / /_ (_)___   ___   / /  ___  ____ ___ 
+                / / _ `// // _ \ / _ \/ _ \| |/ // _ `// __// // _ \ / _ \ / _ \/ -_)/ __// _ \
+                \ \_,_//_//_//_//_//_/\___/|___/ \_,_/ \__//_/ \___//_//_//_//_/\__//_/   \___/
+                 \___/                                                                         
+
+  
+                                 _   _._|_|_|_|_ o._ (~|  o _   _ ._   o _| _ _ |
+                                }_\/}_|  _| | | ||| | _|  |_\  (_|| |  |(_|}_(_|o
+*/ 
     $.ui.plugin.add("resizable", "alsoResizeReverse", {
 
         start: function(event, ui) {
@@ -80,3 +91,28 @@ $(function() {
     });
 
 });
+
+var initDiagonal;
+var initFontSize;
+
+$(function() {
+    $("#resizable").resizable({
+        alsoResize: '#content',
+        create: function(event, ui) {
+            initDiagonal = getContentDiagonal();
+            initFontSize = parseInt($("#content").css("font-size"));
+        },
+        resize: function(e, ui) {
+            var newDiagonal = getContentDiagonal();
+            var ratio = newDiagonal / initDiagonal;
+            
+            $("#content").css("font-size", initFontSize + ratio * 3);
+        }
+    });
+});
+
+function getContentDiagonal() {
+    var contentWidth = $("#content").width();
+    var contentHeight = $("#content").height();
+    return contentWidth * contentWidth + contentHeight * contentHeight;
+}
