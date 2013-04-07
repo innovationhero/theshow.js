@@ -1,36 +1,28 @@
+// Gridster Jquery Plugin initialization
 $(function(){ //DOM Ready
 				    $(".gridster ul").gridster({
 										        widget_margins: [8, 8],
 										        widget_base_dimensions: [10, 10],
 							    });
 });
-
-
-
 var app = angular.module('myApp', []);
 
+// GridsterCntrl 
 function GridsterCntrl($scope) {
 			  $scope.widgets = [
 									    {showid: "fibonacci 3", text:'Widget #1', datarow:1, datacol:1, datasizex:5, datasizey:3},
 											{showid: "fibonacci 5", text:'Widget #2', datarow:4, datacol:1, datasizex:5, datasizey:5},
 											{showid: "fibonacci 8", text:'Widget #3', datarow:1, datacol:6, datasizex:8, datasizey:8},
-
-									/*		{showid: "2one", text:'Widget #4', datarow:4, datacol:4, datasizex:1, datasizey:1},
-											{text:'Widget #5', datarow:5, datacol:5, datasizex:1, datasizey:1},
-											{text:'Widget #6', 	
-															datarow:6, datacol:6,
-															datasizex:1, datasizey:1}*/
 				  ];
-
 					$scope.shadow = "shadow";
 //					console.debug("no of widgets(blocks) loaded "+ $scope.widgets.length);
-//							console.debug("no of widgets(blocks) loaded "+ $scope.widgets[0].text);
+//					console.debug("no of widgets(blocks) loaded "+ $scope.widgets[0].text);
 /*					$scope.moveit = function(){
 						
 					}; */
 };
 
-
+// theshow Directive
 app.directive('theshow', function(){
 				  return{
 						  restrict: 'AE',
@@ -52,7 +44,6 @@ app.directive('theshow', function(){
 
 						  link: function(scope, element, attrs, ctrl) {
 							var ablock = element.find(".gridster ul");
-
 								scope.partyMode = false;
 									console.debug("party mode  " + scope.partyMode);
 								scope.party = function(){
@@ -60,8 +51,6 @@ app.directive('theshow', function(){
 									ablock.text =  "i am clicked";
 									console.debug(ablock.showid);
 									console.debug("party mode  " + scope.partyMode);
-
-
 								}
 								scope.fitnessSwap = function(){
 								//angular.element.Gridster.move_widget_to(this.widget, 4);

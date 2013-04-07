@@ -1,0 +1,16 @@
+theshow block {
+  background-color: black;
+  color: yellow;
+  resize: both;
+  alpha-width: 100;
+  alpha-height: 200;
+  beta-width: 80;
+  beta-height: 160;
+  gamma-width: 60;
+  gamma-height: 140;
+  delta-width: 60;
+  delta-height: 140;
+  epsilon-width: 60;
+  epsilon-height: 140;
+  zeta-width: 60;
+  zeta-height: 140; }

@@ -1,0 +1,36 @@
+
+@mixin block-size($x,$y){ width: $x; height: $y; }
+@mixin block-resize() { resize: both; }
+@mixin block-color() { background-color: black;color:yellow; }
+theshow{
+				block{
+	      @include block-color();
+				@include block-resize();	
+								alpha: {
+								 @include	block-size(100,200);
+								};
+								beta: {
+								 @include	block-size(80,160);
+								};
+								gamma: {
+
+								 @include	block-size(60,140);
+								};
+								delta: {
+								 @include	block-size(60,140);
+								};
+								epsilon: {
+								 @include	block-size(60,140);
+								};
+								zeta: {
+								 @include	block-size(60,140);
+								};
+				}
+
+}
+
+
+
+
+//alpha, beta, gamma, delta, epsilon, zeta, eta, theta, 
+//resize: none | both | horizontal | vertical | inherit;
